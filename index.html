@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="color-scheme" content="light dark" />
+  <title>Analyzer App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🧠 Universal Analyzer</h2>
+    <div class="nav-item" onclick="showSection('home')">🏠 Home</div>
+    <div class="nav-item" onclick="showSection('numberAnalyzer')">🔢 Number Analyzer</div>
+    <div class="nav-item" onclick="showSection('stringAnalyzer')">🔠 String Analyzer</div>
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <span class="moon">🌙</span>
+      <span class="sun">☀️</span>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- Home Section -->
+    <div id="home" class="analyzer-section">
+      <h2>Welcome to Universal Analyzer!</h2>
+      <div class="facts-container">
+        <div class="fact-card">
+          <h3>✨ Amazing Number Facts</h3>
+          <ul>
+            <li><strong>6174</strong> is Kaprekar's Constant - a magical number in mathematics</li>
+            <li><strong>142857</strong> is a cyclic number - its digits rotate when multiplied</li>
+            <li><strong>0.999...</strong> (repeating) is exactly equal to 1</li>
+            <li><strong>1089</strong> is the magic number that always appears in a special math trick</li>
+            <li><strong>1729</strong> is the smallest number expressible as the sum of two cubes in two different ways</li>
+          </ul>
+        </div>
+        <div class="fact-card">
+          <h3>🔤 Fascinating String Facts</h3>
+          <ul>
+            <li>"A man, a plan, a canal, Panama" is a perfect palindrome</li>
+            <li>"The quick brown fox jumps over the lazy dog" contains every English letter (pangram)</li>
+            <li>"Listen" and "Silent" are anagrams of each other</li>
+            <li>"Almost" is the longest common English word with all letters in alphabetical order</li>
+            <li>"Typewriter" is the longest English word that can be typed using only the top row of a QWERTY keyboard</li>
+          </ul>
+        </div>
+      </div>
+      <div class="how-to-use">
+        <h3>How to Use This Tool</h3>
+        <p>Select either <strong>Number Analyzer</strong> or <strong>String Analyzer</strong> from the sidebar to begin exploring the mathematical and linguistic properties of numbers and text!</p>
+      </div>
+    </div>
+
+    <!-- Number Analyzer Section -->
+    <div id="numberAnalyzer" class="analyzer-section" style="display:none;">
+      <h2>Number Analyzer</h2>
+      <input type="number" id="numberInput" placeholder="Enter a positive number" />
+      <div class="options">
+        <button onclick="checkNumberProperty('palindrome')">Check Palindrome</button>
+        <button onclick="checkNumberProperty('fibonacci')">Check Fibonacci</button>
+        <button onclick="checkNumberProperty('perfect')">Check Perfect</button>
+        <button onclick="checkNumberProperty('strong')">Check Strong</button>
+        <button onclick="checkNumberProperty('armstrong')">Check Armstrong</button>
+        <button onclick="checkNumberProperty('prime')">Check Prime</button>
+      </div>
+      <div class="results" id="numberResults"></div>
+    </div>
+
+    <!-- String Analyzer Section -->
+    <div id="stringAnalyzer" class="analyzer-section" style="display:none;">
+      <h2>String Analyzer</h2>
+      <input type="text" id="stringInput" placeholder="Enter some text" />
+      <input type="text" id="secondString" placeholder="Second text (for anagram check)" />
+      <div class="options">
+        <button onclick="checkStringProperty('palindrome')">Check Palindrome</button>
+        <button onclick="checkStringProperty('anagram')">Check Anagram</button>
+        <button onclick="checkStringProperty('pangram')">Check Pangram</button>
+        <button onclick="checkStringProperty('vowelConsonant')">Count Vowels/Consonants</button>
+      </div>
+      <div class="results" id="stringResults"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
